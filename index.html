@@ -1,74 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Kyle F. Goodwin | Web Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle F. Goodwin | Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container"> 
-      <h1>Kyle F. Goodwin</h1>
+    
+    <nav class="navbar">
+      <div class="nav-content">
+        <span class="logo">KFG</span>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </div>
+    </nav>
 
-      <img src="/images/profile.jpeg" alt="A photo of Kyle F. Goodwin" class="profile-img">
+    <div class="container main-content"> 
+      
+      <header class="hero">
+        <img src="/images/profile.jpeg" alt="A photo of Kyle F. Goodwin" class="profile-img">
+        <h1>Kyle F. Goodwin</h1>
+        <p class="subtitle">Front-End Developer & CS Student</p>
+      </header>
 
       <section class="about-me">
         <h2>About Me</h2>
         <p>
-          Hello! I'm Kyle, a new developer focusing on front-end web technologies like HTML and CSS. I'm building this page as my first personal portfolio to track my progress and share projects I'm working on. I'm currently interested in learning JavaScript and eventually working on mobile app development.
+          Hello! I'm Kyle, a developer focusing on front-end web technologies like HTML, CSS, and modern JavaScript. I am currently building my skills in mobile app development and distributed systems.
         </p>
         <p>
-          Outside of coding, I enjoy hiking, playing guitar, and reading science fiction novels. Feel free to connect with me!
+          This site acts as a living documentation of my journey. Outside of coding, I enjoy hiking the NH 48, playing guitar, and reading science fiction novels.
         </p>
-      </section>
-
-      <section class="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          
-          <div class="project-card">
-            <h3>Portfolio Page</h3>
-            <p>
-              My first personal website built from scratch using HTML and CSS. Focus on responsive design and modern styling techniques.
-            </p>
-            <a href="#">View Code on GitHub &rarr;</a>
-          </div>
-
-          <div class="project-card">
-            <h3>New Hampshire 4000 Footer Tracking App</h3>
-            <p>
-              An iOS app focused on tracking hiking progress on the 48 New Hampshire Footers. Coming Soon!
-            </p>
-            <a href="#">Learn More &rarr;</a>
-          </div>
-
-          <div class="project-card">
-            <h3>BulletZone</h3>
-            <p>
-              A Java based game developed in class at the University of New Hampshire. Leverages Spring Boot and HTTP server calls for gameplay!
-            </p>
-            <a href="#">Learn More &rarr;</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Azure Ping-Pong </h3>
-            <p>
-              A dsitributed system deployed in Azure that leverages Go, Proto.Actor, and Azure VMs to simulate inter-VM message passing.
-            </p>
-            <a href="#">Learn More &rarr;</a>
-          </div>
-
+        
+        <div class="cta-container">
+          <a href="projects.html" class="btn btn-primary">View My Projects</a>
+          <a href="https://github.com/kylefgoodwin" target="_blank" class="btn btn-secondary">Visit GitHub</a>
         </div>
       </section>
-      
-      <section class="contact">
-        <h2>Connect With Me</h2>
-        <p>
-          You can find my code and connect with me via the following platforms:
-        </p>
-        <p>
-          GitHub: https://github.com/kylefgoodwin | LinkedIn: https://www.linkedin.com/in/kgoodwin109/
-        </p>
-      </section>
+
+      <footer>
+        <h2>Connect</h2>
+        <div class="social-links">
+          <a href="https://github.com/kylefgoodwin" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/kgoodwin109/" target="_blank">LinkedIn</a>
+        </div>
+        <p class="copyright">&copy; 2025 Kyle F. Goodwin</p>
+      </footer>
 
     </div>
   </body>
