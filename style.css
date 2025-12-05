@@ -234,6 +234,7 @@ p {
 .tag.swift { background-color: #ffedd5; color: #c2410c; }
 .tag.java { background-color: #fee2e2; color: #b91c1c; }
 .tag.go { background-color: #dcfce7; color: #15803d; }
+.tag.python { background-color: #fef3c7; color: #92400e; }
 
 /* --- Footer --- */
 footer {
