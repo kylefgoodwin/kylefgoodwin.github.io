@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Kyle F. Goodwin | Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Kyle F. Goodwin — backend engineering, distributed systems, Swift/iOS, and full-stack development."/>
+    <meta property="og:title" content="Kyle F. Goodwin | Developer"/>
+    <meta property="og:description" content="Distributed systems, backend engineering, Swift/iOS, and practical DevOps."/>
+    <meta property="og:type" content="website"/>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico"/>
   </head>
   <body>
-    
     <nav class="navbar">
       <div class="nav-content">
         <span class="logo">KFG</span>
@@ -16,41 +20,159 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
         </ul>
+        <div class="nav-actions">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙 Toggle</button>
+        </div>
       </div>
     </nav>
 
-    <div class="container main-content"> 
-      
+    <div class="container">
       <header class="hero">
-        <img src="/images/profile.jpeg" alt="A photo of Kyle F. Goodwin" class="profile-img">
+        <!-- Replace with your image: /images/profile.jpeg -->
+        <img src="/images/profile.jpeg" alt="Photo of Kyle Goodwin" class="profile-img" />
         <h1>Kyle F. Goodwin</h1>
-        <p class="subtitle">Full Stack Developer & CS Student</p>
+        <p class="subtitle">Backend engineering, distributed systems, and Swift/iOS</p>
+
+        <div class="cta-container">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="https://github.com/kylefgoodwin" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
+          <a href="https://www.linkedin.com/in/kgoodwin109/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <!-- Replace resume.pdf with your actual resume path -->
+        </div>
+        <div class="cta-container">
+          <a href="/docs/Kyle_Goodwin_Resume.pdf" class="btn btn-secondary">Download Resume</a>
+        </div>
       </header>
 
       <section class="about-me">
-        <h2>About Me</h2>
+        <h2>About me</h2>
         <p>
-          Hello! I'm Kyle, a developer focusing on the full technology stack, including projects in Java, Swift, Go, Python, HTML/CSS, and more. I am currently building my skills in mobile app development and distributed systems.
+          I’m a CS student and developer who thrives on building real systems end-to-end — modeling protocols, debugging integrations, and making distributed components talk reliably. I like work that demands rigor and has constraints that bite back.
         </p>
         <p>
-          This site acts as a living documentation of my journey. Outside of coding, I enjoy hiking the NH 48, playing guitar, and reading science fiction novels.
+          Recently I’ve been deep in mobile development (Swift/iOS) and Go-based distributed patterns, while keeping my backend chops sharp with Python, .NET/C#, SQL Server, and practical DevOps.
         </p>
-        
+
+        <ul class="bullets">
+          <li><strong>Backend focus:</strong> distributed systems, protocol analysis, data pipelines</li>
+          <li><strong>Mobile:</strong> Swift/iOS with clean architecture and native UI</li>
+          <li><strong>DevOps:</strong> Git mastery, reproducible flows, CI-friendly patterns</li>
+          <li><strong>Pragmatism:</strong> methodical debugging, safety checks, verification</li>
+        </ul>
+
         <div class="cta-container">
-          <a href="projects.html" class="btn btn-primary">View My Projects</a>
-          <a href="https://github.com/kylefgoodwin" target="_blank" class="btn btn-secondary">Visit GitHub</a>
+          <a href="projects.html" class="btn btn-primary">Explore selected work</a>
         </div>
       </section>
 
-      <footer>
-        <h2>Connect</h2>
-        <div class="social-links">
-          <a href="https://github.com/kylefgoodwin" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/kgoodwin109/" target="_blank">LinkedIn</a>
+      <section>
+        <h2>Tech stack</h2>
+        <div class="stack-grid">
+          <div class="stack-item"><span class="stack-dot"></span> Java • Spring</div>
+          <div class="stack-item"><span class="stack-dot"></span> Swift • iOS</div>
+          <div class="stack-item"><span class="stack-dot"></span> Go • Concurrency</div>
+          <div class="stack-item"><span class="stack-dot"></span> Python • FastAPI</div>
+          <div class="stack-item"><span class="stack-dot"></span> .NET/C# • APIs</div>
+          <div class="stack-item"><span class="stack-dot"></span> SQL Server • Data modeling</div>
+          <div class="stack-item"><span class="stack-dot"></span> Git • Advanced workflows</div>
+          <div class="stack-item"><span class="stack-dot"></span> Protocols • Integration & parsing</div>
         </div>
-        <p class="copyright">&copy; 2025 Kyle F. Goodwin</p>
-      </footer>
+      </section>
 
+      <section>
+        <h2>Featured projects</h2>
+        <div class="featured">
+          <article class="feature-card">
+            <div class="card-header">
+              <h3>NH48 Tracker</h3>
+              <div class="tags">
+                <span class="tag green">Swift</span>
+                <span class="tag blue">iOS</span>
+              </div>
+            </div>
+            <p class="card-desc">
+              A clean iOS app for tracking progress on the NH 48 4,000-footers. Simple checklist, progress visualization, and a UI that respects the outdoors.
+            </p>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/NH48" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="card-header">
+              <h3>EDI Processing System</h3>
+              <div class="tags">
+                <span class="tag amber">Python</span>
+              </div>
+            </div>
+            <p class="card-desc">
+              Electronic Data Interchange pipelines with robust parsing and transformation. Focused on correctness, clarity, and business workflow integration.
+            </p>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/EDI-Project" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Timeline</h2>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-role">Sprague Energy — Junior Developer (Internship)</div>
+            <div class="t-time">Application development, database work, and production-minded troubleshooting</div>
+          </div>
+          <div class="t-item">
+            <div class="t-role">UNH — CS (Junior)</div>
+            <div class="t-time">Distributed systems, backend engineering, and practical DevOps</div>
+          </div>
+          <div class="t-item">
+            <div class="t-role">Current focus</div>
+            <div class="t-time">Swift/iOS, protocol modeling, resilient integrations, and clean architectures</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Get in touch</h2>
+        <p class="small">Want to talk about backend roles, distributed systems, or iOS work? Send a message.</p>
+        <form action="https://formspree.io/f/your-id" method="POST">
+          <!-- Replace the action URL with your Formspree endpoint or server -->
+          <div class="contact-grid">
+            <input class="input" type="text" name="name" placeholder="Your name" required />
+            <input class="input" type="email" name="email" placeholder="Your email" required />
+          </div>
+          <div style="margin-top: 12px;">
+            <textarea class="textarea" name="message" placeholder="Your message" required></textarea>
+          </div>
+          <div class="cta-container" style="justify-content: flex-start;">
+            <button class="btn btn-primary" type="submit">Send</button>
+            <a class="btn btn-secondary" href="mailto:kylefgoodwin@gmail.com">Email instead</a>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <div class="social-links">
+          <a class="social-link" href="https://github.com/kylefgoodwin" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-link" href="https://www.linkedin.com/in/kgoodwin109/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <p class="small">Made with care in New Hampshire • © 2025 Kyle F. Goodwin</p>
+      </footer>
     </div>
+
+    <script>
+      // Dark mode toggle: persists to localStorage
+      (function() {
+        const root = document.documentElement;
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') root.classList.add('dark');
+        const btn = document.getElementById('themeToggle');
+        btn.addEventListener('click', () => {
+          root.classList.toggle('dark');
+          localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Projects | Kyle F. Goodwin</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Selected projects across Web, iOS, and Distributed Systems."/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   </head>
   <body>
-
     <nav class="navbar">
       <div class="nav-content">
         <span class="logo">KFG</span>
@@ -16,80 +16,163 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="projects.html" class="active">Projects</a></li>
         </ul>
+        <div class="nav-actions">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙 Toggle</button>
+        </div>
       </div>
     </nav>
 
-    <div class="container main-content"> 
-      <header class="page-header">
-        <h1>Selected Projects</h1>
-        <p>A collection of my work in Web, iOS, and Distributed Systems.</p>
+    <div class="container">
+      <header class="hero" style="text-align:left;">
+        <h1 style="margin-top:0;">Selected projects</h1>
+        <p class="subtitle">A practical mix of mobile, backend, and distributed systems. Built to be understood, maintained, and shipped.</p>
+        <div class="cta-container" style="justify-content:flex-start;">
+          <a href="https://github.com/kylefgoodwin?tab=repositories" class="btn btn-secondary" target="_blank" rel="noopener">All repositories</a>
+        </div>
       </header>
 
-      <section class="projects">
-        <div class="projects-grid">
-          
-          <div class="project-card">
-            <div class="card-header">
-                <h3>Portfolio Website</h3>
-                <span class="tag html">HTML/CSS</span>
-            </div>
-            <p>
-              My personal website built from scratch. Focuses on responsive design, flexbox/grid layouts, and semantic HTML structure.
-            </p>
-            <a href="https://github.com/kylefgoodwin/kylefgoodwin.github.io" target="_blank">View Source &rarr;</a>
-          </div>
+      <section>
+        <h2>Filter by area</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="distributed">Distributed</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+        </div>
 
-          <div class="project-card">
+        <div class="projects-grid" id="projectsGrid">
+          <!-- NH48 Tracker -->
+          <article class="project-card" data-tags="mobile web">
             <div class="card-header">
-                <h3>NH48 Tracker</h3>
-                <span class="tag swift">Swift/iOS</span>
+              <h3>NH48 Tracker</h3>
+              <div class="tags">
+                <span class="tag green">Swift</span>
+                <span class="tag blue">iOS</span>
+              </div>
             </div>
-            <p>
-              An iOS app for tracking hiking progress on the 48 New Hampshire 4000-footers. Features progress visualization and checklist management.
+            <p class="card-desc">
+              Track hiking progress on the NH 48. Clean UI, progress visualization, and checklist management. Built with native Swift and a focus on clarity.
             </p>
-            <a href="https://github.com/kylefgoodwin/NH48" target="_blank">View Repo &rarr;</a>
-          </div>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/NH48" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </article>
 
-          <div class="project-card">
+          <!-- EDI Project -->
+          <article class="project-card" data-tags="backend web">
             <div class="card-header">
-                <h3>BulletZone</h3>
-                <span class="tag java">Java</span>
+              <h3>EDI Processing System</h3>
+              <div class="tags">
+                <span class="tag amber">Python</span>
+              </div>
             </div>
-            <p>
-              A Java-based game developed at UNH. Leverages Spring Boot and HTTP server calls to manage game state and multiplayer interactions.
+            <p class="card-desc">
+              Robust parsing and transformation of EDI documents with a business-friendly pipeline. Emphasis on deterministic behavior and clear error surfaces.
             </p>
-            <a href="https://github.com/kylefgoodwin/bulletzone" target="_blank">View Repo &rarr;</a>
-          </div>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/EDI-Project" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </article>
 
-          <div class="project-card">
+          <!-- BulletZone -->
+          <article class="project-card" data-tags="backend web">
             <div class="card-header">
-                <h3>Distributed System (722_3P)</h3>
-                <span class="tag go">Go</span>
+              <h3>BulletZone</h3>
+              <div class="tags">
+                <span class="tag blue">Java</span>
+              </div>
             </div>
-            <p>
-              A distributed computing project built with Go. Demonstrates concurrent programming and distributed system design patterns.
+            <p class="card-desc">
+              A Java-based game with Spring Boot-backed HTTP calls to manage game state and multiplayer interactions. Built at UNH with team collaboration patterns.
             </p>
-            <a href="https://github.com/kylefgoodwin/722_3P" target="_blank">View Repo &rarr;</a>
-          </div>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/bulletzone" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </article>
 
-          <div class="project-card">
+          <!-- Portfolio Site -->
+          <article class="project-card" data-tags="web">
             <div class="card-header">
-                <h3>EDI Project</h3>
-                <span class="tag python">Python</span>
+              <h3>Portfolio Website</h3>
+              <div class="tags">
+                <span class="tag blue">HTML/CSS</span>
+              </div>
             </div>
-            <p>
-              An Electronic Data Interchange processing system built with Python for automated data transformation and business workflow integration.
+            <p class="card-desc">
+              Minimal static site with responsive layouts, grid/flexbox, and a clean design system. No frameworks — just careful CSS and accessible markup.
             </p>
-            <a href="https://github.com/kylefgoodwin/EDI-Project" target="_blank">View Repo &rarr;</a>
-          </div>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/kylefgoodwin.github.io" target="_blank" rel="noopener">View source</a>
+            </div>
+          </article>
 
+          <!-- Distributed System (Go) -->
+          <article class="project-card" data-tags="distributed backend">
+            <div class="card-header">
+              <h3>Distributed System (Go)</h3>
+              <div class="tags">
+                <span class="tag green">Go</span>
+              </div>
+            </div>
+            <p class="card-desc">
+              Concurrency-first design with worker coordination and resilient communication. Demonstrates distributed patterns and careful failure handling.
+            </p>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://github.com/kylefgoodwin/722_3P" target="_blank" rel="noopener">View repo</a>
+            </div>
+          </article>
         </div>
       </section>
 
       <footer>
-        <p class="copyright">&copy; 2025 Kyle F. Goodwin</p>
+        <div class="social-links">
+          <a class="social-link" href="https://github.com/kylefgoodwin" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-link" href="https://www.linkedin.com/in/kgoodwin109/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <p class="small">© 2025 Kyle F. Goodwin</p>
       </footer>
-
     </div>
+
+    <script>
+      // Dark mode toggle
+      (function() {
+        const root = document.documentElement;
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') root.classList.add('dark');
+        const btn = document.getElementById('themeToggle');
+        btn.addEventListener('click', () => {
+          root.classList.toggle('dark');
+          localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+        });
+      })();
+
+      // Filters
+      (function() {
+        const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+        const cards = Array.from(document.querySelectorAll('.project-card'));
+
+        function applyFilter(tag) {
+          cards.forEach(card => {
+            const tags = (card.getAttribute('data-tags') || '').toLowerCase().split(' ');
+            if (tag === 'all' || tags.includes(tag)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        }
+
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            applyFilter(btn.dataset.filter);
+          });
+        });
+
+        applyFilter('all');
+      })();
+    </script>
   </body>
 </html>
