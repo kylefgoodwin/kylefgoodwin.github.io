@@ -34,11 +34,11 @@
       <section>
         <h2>Filter by area</h2>
         <div class="filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="mobile">Mobile</button>
-          <button class="filter-btn" data-filter="backend">Backend</button>
-          <button class="filter-btn" data-filter="distributed">Distributed</button>
-          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="filter-btn" data-filter="backend" aria-pressed="false">Backend</button>
+          <button class="filter-btn" data-filter="distributed" aria-pressed="false">Distributed</button>
+          <button class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
         </div>
 
         <div class="projects-grid" id="projectsGrid">
@@ -130,7 +130,7 @@
           <a class="social-link" href="https://github.com/kylefgoodwin" target="_blank" rel="noopener">GitHub</a>
           <a class="social-link" href="https://www.linkedin.com/in/kgoodwin109/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <p class="small">© 2025 Kyle F. Goodwin</p>
+        <p class="small">© 2026 Kyle F. Goodwin</p>
       </footer>
     </div>
 
@@ -147,10 +147,19 @@
         });
       })();
 
-      // Filters
+      // Filters (persist last used)
       (function() {
+        const STORAGE_KEY = 'projectsFilter';
         const buttons = Array.from(document.querySelectorAll('.filter-btn'));
         const cards = Array.from(document.querySelectorAll('.project-card'));
+
+        function setActiveButton(tag) {
+          buttons.forEach(b => {
+            const active = b.dataset.filter === tag;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+        }
 
         function applyFilter(tag) {
           cards.forEach(card => {
@@ -163,15 +172,20 @@
           });
         }
 
+        function select(tag) {
+          setActiveButton(tag);
+          applyFilter(tag);
+          localStorage.setItem(STORAGE_KEY, tag);
+        }
+
         buttons.forEach(btn => {
           btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            applyFilter(btn.dataset.filter);
+            select(btn.dataset.filter);
           });
         });
 
-        applyFilter('all');
+        const initial = localStorage.getItem(STORAGE_KEY) || 'all';
+        select(initial);
       })();
     </script>
   </body>

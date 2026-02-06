@@ -65,6 +65,46 @@
       </section>
 
       <section>
+        <h2>Skills</h2>
+        <p class="subtitle" style="margin-top:0;">
+          Tools and technologies I’m comfortable shipping with.
+        </p>
+        <div class="stack-grid">
+          <div class="stack-item"><span class="stack-dot"></span><strong>Java</strong></div>
+          <div class="stack-item"><span class="stack-dot"></span><strong>C#/.NET</strong></div>
+          <div class="stack-item"><span class="stack-dot"></span><strong>Swift/iOS</strong></div>
+          <div class="stack-item"><span class="stack-dot"></span><strong>SQL Server</strong></div>
+          <div class="stack-item"><span class="stack-dot"></span><strong>Python</strong></div>
+=          <div class="stack-item"><span class="stack-dot"></span><strong>Git</strong></div>
+          <div class="stack-item"><span class="stack-dot"></span><strong>HTML/CSS</strong></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Currently</h2>
+        <div class="now-grid">
+          <div class="now-card">
+            <h3 style="margin:0 0 6px;">Building</h3>
+            <p class="card-desc" style="margin:0;">
+              Small, real-world apps with clean architecture and thoughtful UX.
+            </p>
+          </div>
+          <div class="now-card">
+            <h3 style="margin:0 0 6px;">Learning</h3>
+            <p class="card-desc" style="margin:0;">
+              Distributed systems patterns in Go and production-minded backend design.
+            </p>
+          </div>
+          <div class="now-card">
+            <h3 style="margin:0 0 6px;">Open to</h3>
+            <p class="card-desc" style="margin:0;">
+              Backend / platform roles, iOS work, and projects that need reliability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>Featured projects</h2>
         <div class="featured">
           <article class="feature-card">
@@ -131,7 +171,11 @@
           <div class="cta-container" style="justify-content: flex-start;">
             <button class="btn btn-primary" type="submit">Send</button>
             <a class="btn btn-secondary" href="mailto:kylefgoodwin@gmail.com">Email instead</a>
+            <button class="btn btn-secondary" type="button" id="copyEmailBtn" data-email="kylefgoodwin@gmail.com">
+              Copy email
+            </button>
           </div>
+          <p class="small" id="copyEmailStatus" style="margin: 10px 0 0;"></p>
         </form>
       </section>
 
@@ -140,7 +184,7 @@
           <a class="social-link" href="https://github.com/kylefgoodwin" target="_blank" rel="noopener">GitHub</a>
           <a class="social-link" href="https://www.linkedin.com/in/kgoodwin109/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <p class="small">Made with care in New Hampshire • © 2025 Kyle F. Goodwin</p>
+        <p class="small">Made with care in New Hampshire • © 2026 Kyle F. Goodwin</p>
       </footer>
     </div>
 
@@ -154,6 +198,24 @@
         btn.addEventListener('click', () => {
           root.classList.toggle('dark');
           localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+        });
+      })();
+
+      // Copy email
+      (function() {
+        const btn = document.getElementById('copyEmailBtn');
+        const status = document.getElementById('copyEmailStatus');
+        if (!btn || !status) return;
+
+        btn.addEventListener('click', async () => {
+          const email = btn.getAttribute('data-email') || '';
+          try {
+            await navigator.clipboard.writeText(email);
+            status.textContent = `Copied: ${email}`;
+          } catch (e) {
+            status.textContent = 'Copy failed (your browser may block clipboard access).';
+          }
+          window.setTimeout(() => (status.textContent = ''), 2500);
         });
       })();
     </script>
